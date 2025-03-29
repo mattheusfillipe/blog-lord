@@ -6,7 +6,8 @@ export default function SearchInput() {
       <input
         type='text'
         placeholder='Buscar no Blog'
-        className='bg-[var(--foreground)] rounded-lg px-4 py-2 placeholder:text-[var(--primary)] font-semibold text-[var(--primary)] w-full'
+        className='bg-[var(--foreground)] rounded-lg px-4 py-2 placeholder:text-[var(--primary)] font-semibold text-[var(--primary)] w-full focus:outline-none focus:ring-1 focus:ring-[#300c17]
+'
       />
 
       <Image
