@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
-export default function Banner() {
+export function Banner() {
   return (
-    <section className='px-0 m-0 py-8 w-[1280px]'>
+    <section className='px-0 mt-8 w-[1280px]'>
       <div className='container'>
         {/* Título e link "Ver todas" */}
         <div className='flex items-center justify-between mb-6'>

@@ -1,10 +1,9 @@
-import Image from 'next/image'
 import InstagramFeed from './InstagramFeed'
 
-export default function Banner() {
+export function Instagram() {
   return (
-    <section className='mx-0 my-12 p-8 w-[1280px] h-64 bg-[var(--primary)] rounded-xl'>
-      <div className='flex items-center justify-between mb-6'>
+    <section className='mx-0 mt-12 w-[1280px] rounded-xl'>
+      <div className='flex items-start p-4 justify-between mb-6 h-64 bg-[var(--primary)] rounded-xl'>
         <div className='flex items-center gap-2'>
           <svg
             className='w-5 h-5 text-[var(--foreground)]'
@@ -50,14 +49,16 @@ export default function Banner() {
             <path
               d='M1.00005 1.5C1.00005 1.5 7 5.9189 7 7.5C7 9.0812 1 13.5 1 13.5'
               stroke='currentColor'
-              stroke-width='1.5'
-              stroke-linecap='round'
-              stroke-linejoin='round'
+              strokeWidth='1.5'
+              strokeLinecap='round'
+              strokeLinejoin='round'
             />
           </svg>
         </a>
       </div>
-      <InstagramFeed />
+      <div className='p-4 -mt-58'>
+        <InstagramFeed />
+      </div>
     </section>
   )
 }

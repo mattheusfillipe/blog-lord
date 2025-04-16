@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import SearchInput from './SearchInput'
 
-export default function Header() {
+export function Header() {
   return (
     <header className='bg-[var(--primary)] w-[1280px] flex justify-between items-center px-10 py-5 rounded-[12px]'>
       <Image src='/Logo.svg' alt='Logo' width={111} height={44} />
