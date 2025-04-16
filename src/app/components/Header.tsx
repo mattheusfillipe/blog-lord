@@ -12,7 +12,7 @@ export function Header() {
 
       <nav className='flex gap-6 font-semibold'>
         <Link href='/'>Home</Link>
-        <a href='#'>Explore</a>
+        <Link href='/explore'>Explore</Link>
         <a href='https://lordperfumaria.com.br/' target='_blank'>
           Compre Online
         </a>
