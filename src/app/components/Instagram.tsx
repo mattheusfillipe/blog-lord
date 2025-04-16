@@ -3,11 +3,11 @@ import InstagramFeed from './InstagramFeed'
 
 export default function Banner() {
   return (
-    <section className='px-0 m-0 py-8 w-[1280px]'>
+    <section className='mx-0 my-12 p-8 w-[1280px] h-64 bg-[var(--primary)] rounded-xl'>
       <div className='flex items-center justify-between mb-6'>
         <div className='flex items-center gap-2'>
           <svg
-            className='w-5 h-5 text-[var(--primary)]'
+            className='w-5 h-5 text-[var(--foreground)]'
             fill='none'
             viewBox='0 0 24 24'
             xmlns='http://www.w3.org/2000/svg'
@@ -31,22 +31,33 @@ export default function Banner() {
               strokeLinejoin='round'
             />
           </svg>
-          <p className='font-semibold text-[var(--secondary)]'>
+          <p className='font-semibold text-[var(--foreground)]'>
             Últimas do Instagram
           </p>
         </div>
         <a
           href='http://instagram.com/lordperfumaria'
           target='_blank'
-          className='text-[var(--secondary)] flex items-center gap-2 hover:text-[var(--primary)]'
+          className='text-[var(--foreground)] flex items-center gap-2'
         >
           <p>Ver todas</p>
-          <Image src='/Chevron.svg' alt='' width={6} height={12} />
+          <svg
+            className='w-3 h-3 text-[var(--foreground)]'
+            fill='none'
+            viewBox='0 0 8 15'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path
+              d='M1.00005 1.5C1.00005 1.5 7 5.9189 7 7.5C7 9.0812 1 13.5 1 13.5'
+              stroke='currentColor'
+              stroke-width='1.5'
+              stroke-linecap='round'
+              stroke-linejoin='round'
+            />
+          </svg>
         </a>
       </div>
-      <div className='bg-[var(--primary)] h-64 rounded-lg p-4'>
-        <InstagramFeed />
-      </div>
+      <InstagramFeed />
     </section>
   )
 }
