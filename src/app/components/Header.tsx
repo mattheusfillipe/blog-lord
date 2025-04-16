@@ -1,6 +1,7 @@
 // components/Header.tsx
 import Image from 'next/image'
 import SearchInput from './SearchInput'
+import Link from 'next/link'
 
 export function Header() {
   return (
@@ -10,12 +11,12 @@ export function Header() {
       <SearchInput />
 
       <nav className='flex gap-6 font-semibold'>
-        <a href='#'>Home</a>
+        <Link href='/'>Home</Link>
         <a href='#'>Explore</a>
         <a href='https://lordperfumaria.com.br/' target='_blank'>
           Compre Online
         </a>
-        <a href='#'>Quem Somos</a>
+        <Link href='/quem-somos'>Quem Somos</Link>
       </nav>
 
       <div className='flex gap-4'>
