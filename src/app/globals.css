@@ -10,6 +10,7 @@
   :root {
     --background: #f7f7f0;
     --primary: #7a0026;
+    --primary-hover: #60001e;
     --foreground: #f7f0f0;
     --secondary: #393939;
   }
