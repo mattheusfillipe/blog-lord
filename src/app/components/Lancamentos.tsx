@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { ProductCard } from './ProductCard'
 
 export function Lancamentos() {
   return (
@@ -15,139 +16,44 @@ export function Lancamentos() {
       {/* Cards */}
       <div className='flex mt-6 justify-between'>
         {/* Conteúdo 1*/}
-        <div className='w-[223px] h-[355px]'>
-          <div className='relative w-[223px] h-[300px]'>
-            <Image
-              src='/image.png'
-              alt='Simbbolo jornal'
-              fill
-              className='object-contain'
-            />
-          </div>
-          <div className='flex items-center justify-between mt-2 px-2.5'>
-            <div>
-              <h2 className='text-[var(--secondary)] font-semibold'>Toy Boy</h2>
-              <p className='text-xs text-[var(--secondary)]'>
-                Moschino - Masculino
-              </p>
-            </div>
-
-            <a href='#'>
-              <div className='bg-[var(--primary)] rounded-md'>
-                <Image src='Arrow.svg' alt='Seta' width={28} height={28} />
-              </div>
-            </a>
-          </div>
-        </div>
+        <ProductCard
+          image='/image.png'
+          title='Toy Boy'
+          subtitle='Moschino - Masculino'
+          link='#'
+        />
 
         {/* Conteúdo 2*/}
-        <div className='w-[223px] h-[355px]'>
-          <div className='relative w-[223px] h-[300px]'>
-            <Image
-              src='/image-1.png'
-              alt='Simbbolo jornal'
-              fill
-              className='object-contain'
-            />
-          </div>
-          <div className='flex items-center justify-between mt-2 px-2.5'>
-            <div>
-              <h2 className='text-[var(--secondary)] font-semibold'>
-                Extreme Woods
-              </h2>
-              <p className='text-xs text-[var(--secondary)]'>
-                Galaxy - Masculino
-              </p>
-            </div>
-
-            <a href='#'>
-              <div className='bg-[var(--primary)] rounded-md'>
-                <Image src='Arrow.svg' alt='Seta' width={28} height={28} />
-              </div>
-            </a>
-          </div>
-        </div>
+        <ProductCard
+          image='/image-1.png'
+          title='Extreme Woods'
+          subtitle='Galaxy - Masculino'
+          link='#'
+        />
 
         {/* Conteúdo 3*/}
-        <div className='w-[223px] h-[355px]'>
-          <div className='relative w-[223px] h-[300px]'>
-            <Image
-              src='/image-2.png'
-              alt='Simbbolo jornal'
-              fill
-              className='object-contain'
-            />
-          </div>
-          <div className='flex items-center justify-between mt-2 px-2.5'>
-            <div>
-              <h2 className='text-[var(--secondary)] font-semibold'>Eqaab</h2>
-              <p className='text-xs text-[var(--secondary)]'>
-                Al Wataniah - Masculino
-              </p>
-            </div>
-
-            <a href='#'>
-              <div className='bg-[var(--primary)] rounded-md'>
-                <Image src='Arrow.svg' alt='Seta' width={28} height={28} />
-              </div>
-            </a>
-          </div>
-        </div>
+        <ProductCard
+          image='/image-2.png'
+          title='Eqaab'
+          subtitle='Al Wataniah - Masculino'
+          link='#'
+        />
 
         {/* Conteúdo 4*/}
-        <div className='w-[223px] h-[355px]'>
-          <div className='relative w-[223px] h-[300px]'>
-            <Image
-              src='/image-3.png'
-              alt='Simbbolo jornal'
-              fill
-              className='object-contain'
-            />
-          </div>
-          <div className='flex items-center justify-between mt-2 px-2.5'>
-            <div>
-              <h2 className='text-[var(--secondary)] font-semibold'>
-                1 Million Royal
-              </h2>
-              <p className='text-xs text-[var(--secondary)]'>
-                Paco Rabane - Masculino
-              </p>
-            </div>
-
-            <a href='#'>
-              <div className='bg-[var(--primary)] rounded-md'>
-                <Image src='Arrow.svg' alt='Seta' width={28} height={28} />
-              </div>
-            </a>
-          </div>
-        </div>
+        <ProductCard
+          image='/image-3.png'
+          title='1 Million Royal'
+          subtitle='Rabane - Masculino'
+          link='#'
+        />
 
         {/* Conteúdo 5*/}
-        <div className='w-[223px] h-[355px]'>
-          <div className='relative w-[223px] h-[300px]'>
-            <Image
-              src='/image-4.png'
-              alt='Simbbolo jornal'
-              fill
-              className='object-contain'
-            />
-          </div>
-          <div className='flex items-center justify-between mt-2 px-2.5'>
-            <div>
-              <h2 className='text-[var(--secondary)] font-semibold'>
-                Eros Energy
-              </h2>
-              <p className='text-xs text-[var(--secondary)]'>
-                Versace - Masculino
-              </p>
-            </div>
-            <a href='#'>
-              <div className='bg-[var(--primary)] rounded-md'>
-                <Image src='Arrow.svg' alt='Seta' width={28} height={28} />
-              </div>
-            </a>
-          </div>
-        </div>
+        <ProductCard
+          image='/image-4.png'
+          title='Eros Energy'
+          subtitle='Versace - Masculino'
+          link='#'
+        />
       </div>
     </section>
   )

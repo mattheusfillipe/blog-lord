@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export function Banner() {
   return (
@@ -17,13 +18,13 @@ export function Banner() {
               Últimas do Blog Lord
             </p>
           </div>
-          <a
-            href='#'
-            className='text-[var(--secondary)] flex items-center gap-2 hover:text-[var(--primary)]'
+          <Link
+            href={'/explore'}
+            className='flex items-center gap-2 text-[var(--secondary)] font-semibold'
           >
             <p>Ver todas</p>
             <Image src='/Chevron.svg' alt='' width={6} height={12} />
-          </a>
+          </Link>
         </div>
 
         {/* Banner */}

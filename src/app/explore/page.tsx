@@ -15,7 +15,7 @@ export default function Explore() {
       </div>
 
       {/* Cards */}
-      <div className='grid grid-cols-3 grid-rows-3 w-full h-auto gap-5 mt-4'>
+      <div className='grid grid-cols-3 grid-rows-3 w-full h-auto gap-5 mt-8'>
         {/* Card 1 */}
         <PostCard
           banner='/Banner.jpg'
