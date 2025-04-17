@@ -63,8 +63,8 @@ export function PostCard({
         </div>
 
         {/* Botão de leitura */}
-        <button className='absolute cursor-pointer backdrop-blur-md bg-black/30 rounded-xl p-2 bottom-3 right-3 border-gray-300/80 border-[0.5px]'>
-          <Image src='/Arrow.svg' alt='Ícone de seta' width={24} height={24} />
+        <button className='absolute cursor-pointer backdrop-blur-md bg-black/30 rounded-xl py-2 px-4 bottom-3 right-3 border-gray-300/80 border-[0.5px]'>
+          <Image src='/Arrow.svg' alt='Ícone de seta' width={20} height={20} />
         </button>
       </div>
 
