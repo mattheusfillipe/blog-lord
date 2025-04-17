@@ -71,7 +71,7 @@ export function PostCard({
       <h2 className='line-clamp-1 text-[var(--secondary)] mt-2.5 font-bold'>
         {title}
       </h2>
-      <p className='text-[var(--secondary)]'>{description}</p>
+      <p className='line-clamp-4 text-[var(--secondary)]'>{description}</p>
     </div>
   )
 }
