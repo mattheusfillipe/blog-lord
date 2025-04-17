@@ -1,9 +1,32 @@
 import Image from 'next/image'
+import { PostCard } from '../components/PostCard'
 
 export default function Explore() {
   return (
-    <main>
-      <p className='text-black'>Essa é explore</p>
+    <main className='w-[1280px] flex flex-col mt-12'>
+      <div className='flex items-center gap-2'>
+        <Image
+          src='/Journal.svg'
+          alt='Simbbolo jornal'
+          width={20}
+          height={18}
+        />
+        <p className='font-semibold text-[var(--secondary)]'>Blog Lord</p>
+      </div>
+
+      {/* Cards */}
+      <div className='grid grid-cols-3 grid-rows-3 w-full gap-5 mt-4'>
+        {/* Card 1 */}
+        <PostCard
+          banner='/Banner.jpg'
+          authorPhoto='/Banner.jpg'
+          authorName='Jane Doe'
+          date='12 Out, 2025'
+          categories={['Beleza', 'Perfume']}
+          title='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
+          description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+        />
+      </div>
     </main>
   )
 }

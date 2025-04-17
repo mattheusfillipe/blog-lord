@@ -52,9 +52,11 @@ export function Lancamentos() {
           </div>
           <div className='flex items-center justify-between mt-2 px-2.5'>
             <div>
-              <h2 className='text-[var(--secondary)] font-semibold'>Toy Boy</h2>
+              <h2 className='text-[var(--secondary)] font-semibold'>
+                Extreme Woods
+              </h2>
               <p className='text-xs text-[var(--secondary)]'>
-                Moschino - Masculino
+                Galaxy - Masculino
               </p>
             </div>
 
@@ -78,9 +80,9 @@ export function Lancamentos() {
           </div>
           <div className='flex items-center justify-between mt-2 px-2.5'>
             <div>
-              <h2 className='text-[var(--secondary)] font-semibold'>Toy Boy</h2>
+              <h2 className='text-[var(--secondary)] font-semibold'>Eqaab</h2>
               <p className='text-xs text-[var(--secondary)]'>
-                Moschino - Masculino
+                Al Wataniah - Masculino
               </p>
             </div>
 
@@ -104,9 +106,11 @@ export function Lancamentos() {
           </div>
           <div className='flex items-center justify-between mt-2 px-2.5'>
             <div>
-              <h2 className='text-[var(--secondary)] font-semibold'>Toy Boy</h2>
+              <h2 className='text-[var(--secondary)] font-semibold'>
+                1 Million Royal
+              </h2>
               <p className='text-xs text-[var(--secondary)]'>
-                Moschino - Masculino
+                Paco Rabane - Masculino
               </p>
             </div>
 
@@ -130,9 +134,11 @@ export function Lancamentos() {
           </div>
           <div className='flex items-center justify-between mt-2 px-2.5'>
             <div>
-              <h2 className='text-[var(--secondary)] font-semibold'>Toy Boy</h2>
+              <h2 className='text-[var(--secondary)] font-semibold'>
+                Eros Energy
+              </h2>
               <p className='text-xs text-[var(--secondary)]'>
-                Moschino - Masculino
+                Versace - Masculino
               </p>
             </div>
             <a href='#'>
