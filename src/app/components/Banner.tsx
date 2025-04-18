@@ -42,13 +42,15 @@ export function Banner() {
                 <h2 className='text-4xl font-bold max-w-[652px] truncate'>
                   Lorem ipsum dolor sit amet, consectetur ad...
                 </h2>
-                <Image
-                  src='/Arrow.svg'
-                  alt=''
-                  width={40}
-                  height={40}
-                  className='cursor-pointer'
-                />
+                <Link href={'/leitura-materia'}>
+                  <Image
+                    src='/Arrow.svg'
+                    alt=''
+                    width={40}
+                    height={40}
+                    className='cursor-pointer'
+                  />
+                </Link>
               </div>
 
               <div className='flex justify-between items-center mt-4'>
