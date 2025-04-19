@@ -56,7 +56,7 @@ export default function LeituraMateria() {
         </div>
       </div>
       {/* Texto da matéria */}
-      <p className='text-[var(--secondary)] font-normal leading-8'>
+      <p className='text-[var(--secondary)] font-normal leading-8 text-justify'>
         <strong>The standard Lorem Ipsum passage, used since the 1500s</strong>
         <br /> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -123,8 +123,9 @@ export default function LeituraMateria() {
         avoid worse pains."
       </p>
 
-      {/* Título */}
+      {/* Produtos relacionados e leia mais */}
       <section>
+        {/* Produtos relacionados */}
         <div className='w-full h-px bg-gray-300 mb-6' />
         <div className='flex items-center gap-2'>
           <Image
@@ -177,6 +178,230 @@ export default function LeituraMateria() {
             <button className='bg-[var(--primary)] py-1.5 rounded-lg font-semibold'>
               R$999,99
             </button>
+          </div>
+        </div>
+
+        {/* Leia mais */}
+        {/* Título e link "Ver todas" */}
+        <div className='w-full h-px bg-gray-300 mt-8' />
+        <div className='flex items-center justify-between mt-6'>
+          <div className='flex items-center gap-2'>
+            <Image
+              src='/Journal.svg'
+              alt='Simbbolo jornal'
+              width={20}
+              height={18}
+            />
+            <p className='font-semibold text-[var(--secondary)]'>Leia Mais</p>
+          </div>
+          <Link
+            href={'/explore'}
+            className='flex items-center gap-2 text-[var(--secondary)] font-semibold'
+          >
+            <p>Ver todas</p>
+            <Image src='/Chevron.svg' alt='' width={6} height={12} />
+          </Link>
+        </div>
+
+        {/* Cards de posts */}
+        <div className='flex justify-between gap-5 mt-6'>
+          {/* Card1 */}
+          <div className='relative w-full h-56 rounded-xl overflow-hidden'>
+            <Image
+              src='/Banner.jpg'
+              alt='Banner'
+              fill
+              className='object-cover'
+            />
+
+            {/* Overlay com informações do post */}
+            <div className='absolute flex justify-between items-center bg-black/30 rounded-lg top-3 mx-3 px-4 py-2 border-gray-300/80 border-[0.5px] backdrop-blur-md'>
+              <div className='flex gap-3 items-center'>
+                <div className='flex items-center gap-1'>
+                  <Image
+                    src='/Banner.jpg'
+                    alt='Foto autor do post'
+                    width={16}
+                    height={16}
+                    className='object-cover rounded-full overflow-hidden w-4 h-4'
+                  />
+                  <p className='text-sm font-medium text-[var-(--primary)]'>
+                    Jane Doe
+                  </p>
+                </div>
+
+                <div className='flex gap-1 items-center'>
+                  <Image
+                    src='/Calendar.svg'
+                    alt='Calendário ícone'
+                    width={16}
+                    height={16}
+                  />
+                  <p className='text-sm font-medium text-[var-(--primary)]'>
+                    12 Out, 2025
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Overlay com categorias */}
+            <div className='absolute top-3 right-3 flex gap-2 items-center '>
+              <div className='border-[0.5px] bg-black/30 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
+                <p className='text-[12px]'>Beleza</p>
+              </div>
+
+              <div className='border-[0.5px] bg-black/30 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
+                <p className='text-[12px]'>Perfume</p>
+              </div>
+            </div>
+
+            {/* Overlay com título e botão de leitura */}
+            <div className='absolute flex justify-between backdrop-blur-md bg-black/30 rounded-xl inset-x-0 py-2 px-4 bottom-3 mx-3 border-gray-300/80 border-[0.5px]'>
+              <h2 className='font-bold max-w-[400px] truncate'>
+                Lorem ipsum dolor sit amet, consectetur ad...
+              </h2>
+              <Link href={'/leitura-materia'}>
+                <Image
+                  src='/Arrow.svg'
+                  alt=''
+                  width={24}
+                  height={24}
+                  className='cursor-pointer'
+                />
+              </Link>
+            </div>
+          </div>
+          {/* Card2 */}
+          <div className='relative w-full h-56 rounded-xl overflow-hidden'>
+            <Image
+              src='/Banner.jpg'
+              alt='Banner'
+              fill
+              className='object-cover'
+            />
+
+            {/* Overlay com informações do post */}
+            <div className='absolute flex justify-between items-center bg-black/30 rounded-lg top-3 mx-3 px-4 py-2 border-gray-300/80 border-[0.5px] backdrop-blur-md'>
+              <div className='flex gap-3 items-center'>
+                <div className='flex items-center gap-1'>
+                  <Image
+                    src='/Banner.jpg'
+                    alt='Foto autor do post'
+                    width={16}
+                    height={16}
+                    className='object-cover rounded-full overflow-hidden w-4 h-4'
+                  />
+                  <p className='text-sm font-medium text-[var-(--primary)]'>
+                    Jane Doe
+                  </p>
+                </div>
+
+                <div className='flex gap-1 items-center'>
+                  <Image
+                    src='/Calendar.svg'
+                    alt='Calendário ícone'
+                    width={16}
+                    height={16}
+                  />
+                  <p className='text-sm font-medium text-[var-(--primary)]'>
+                    12 Out, 2025
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Overlay com categorias */}
+            <div className='absolute top-3 right-3 flex gap-2 items-center '>
+              <div className='border-[0.5px] bg-black/30 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
+                <p className='text-[12px]'>Beleza</p>
+              </div>
+
+              <div className='border-[0.5px] bg-black/30 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
+                <p className='text-[12px]'>Perfume</p>
+              </div>
+            </div>
+
+            {/* Overlay com título e botão de leitura */}
+            <div className='absolute flex justify-between backdrop-blur-md bg-black/30 rounded-xl inset-x-0 py-2 px-4 bottom-3 mx-3 border-gray-300/80 border-[0.5px]'>
+              <h2 className='font-bold max-w-[400px] truncate'>
+                Lorem ipsum dolor sit amet, consectetur ad...
+              </h2>
+              <Link href={'/leitura-materia'}>
+                <Image
+                  src='/Arrow.svg'
+                  alt=''
+                  width={24}
+                  height={24}
+                  className='cursor-pointer'
+                />
+              </Link>
+            </div>
+          </div>
+          {/* Card3 */}
+          <div className='relative w-full h-56 rounded-xl overflow-hidden'>
+            <Image
+              src='/Banner.jpg'
+              alt='Banner'
+              fill
+              className='object-cover'
+            />
+
+            {/* Overlay com informações do post */}
+            <div className='absolute flex justify-between items-center bg-black/30 rounded-lg top-3 mx-3 px-4 py-2 border-gray-300/80 border-[0.5px] backdrop-blur-md'>
+              <div className='flex gap-3 items-center'>
+                <div className='flex items-center gap-1'>
+                  <Image
+                    src='/Banner.jpg'
+                    alt='Foto autor do post'
+                    width={16}
+                    height={16}
+                    className='object-cover rounded-full overflow-hidden w-4 h-4'
+                  />
+                  <p className='text-sm font-medium text-[var-(--primary)]'>
+                    Jane Doe
+                  </p>
+                </div>
+
+                <div className='flex gap-1 items-center'>
+                  <Image
+                    src='/Calendar.svg'
+                    alt='Calendário ícone'
+                    width={16}
+                    height={16}
+                  />
+                  <p className='text-sm font-medium text-[var-(--primary)]'>
+                    12 Out, 2025
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Overlay com categorias */}
+            <div className='absolute top-3 right-3 flex gap-2 items-center '>
+              <div className='border-[0.5px] bg-black/30 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
+                <p className='text-[12px]'>Beleza</p>
+              </div>
+
+              <div className='border-[0.5px] bg-black/30 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
+                <p className='text-[12px]'>Perfume</p>
+              </div>
+            </div>
+
+            {/* Overlay com título e botão de leitura */}
+            <div className='absolute flex justify-between backdrop-blur-md bg-black/30 rounded-xl inset-x-0 py-2 px-4 bottom-3 mx-3 border-gray-300/80 border-[0.5px]'>
+              <h2 className='font-bold max-w-[400px] truncate'>
+                Lorem ipsum dolor sit amet, consectetur ad...
+              </h2>
+              <Link href={'/leitura-materia'}>
+                <Image
+                  src='/Arrow.svg'
+                  alt=''
+                  width={24}
+                  height={24}
+                  className='cursor-pointer'
+                />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
