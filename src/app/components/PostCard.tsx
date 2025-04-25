@@ -1,27 +1,26 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 interface PostCardProps {
   banner: string
-  authorPhoto: string
-  authorName: string
   date: string
   categories: string[]
   title: string
   description: string
+  link: string
 }
 
 export function PostCard({
   banner,
-  authorPhoto,
-  authorName,
   date,
   categories,
   title,
   description,
+  link,
 }: PostCardProps) {
   return (
-    <div>
-      <div className='relative w-full h-56 rounded-xl overflow-hidden'>
+    <div className='w-[413px] h-auto'>
+      <div className='relative w-[413px] h-56 rounded-xl overflow-hidden'>
         <Image src={banner} alt='Banner' fill className='object-cover' />
 
         {/* Overlay com informações do post */}
@@ -29,13 +28,13 @@ export function PostCard({
           <div className='flex gap-3 items-center'>
             <div className='flex items-center gap-1'>
               <Image
-                src={authorPhoto}
+                src='/authorDefault.png'
                 alt='Foto autor do post'
                 width={16}
                 height={16}
                 className='object-cover rounded-full overflow-hidden w-4 h-4'
               />
-              <p className='text-sm text-[var(--background)]'>{authorName}</p>
+              <p className='text-sm text-[var(--background)]'>Bella</p>
             </div>
 
             <div className='flex gap-1 items-center'>
@@ -63,15 +62,27 @@ export function PostCard({
         </div>
 
         {/* Botão de leitura */}
-        <button className='absolute cursor-pointer backdrop-blur-md bg-black/40 rounded-xl py-2 px-4 bottom-3 right-3 border-gray-300/80 border-[0.5px]'>
-          <Image src='/Arrow.svg' alt='Ícone de seta' width={20} height={20} />
-        </button>
+        <Link href={link} target='_blank'>
+          <button className='absolute cursor-pointer backdrop-blur-md bg-black/40 rounded-xl py-2 px-4 bottom-3 right-3 border-gray-300/80 border-[0.5px]'>
+            <Image
+              src='/Arrow.svg'
+              alt='Ícone de seta'
+              width={20}
+              height={20}
+            />
+          </button>
+        </Link>
       </div>
 
-      <h2 className='line-clamp-1 text-[var(--secondary)] mt-2.5 font-bold'>
-        {title}
-      </h2>
-      <p className='line-clamp-4 text-[var(--secondary)]'>{description}</p>
+      <h2
+        className='line-clamp-1 text-[var(--secondary)] mt-2.5 font-bold'
+        dangerouslySetInnerHTML={{ __html: title }}
+      />
+
+      <p
+        className='line-clamp-4 text-[var(--secondary)] text-justify mt-1'
+        dangerouslySetInnerHTML={{ __html: description }}
+      />
     </div>
   )
 }

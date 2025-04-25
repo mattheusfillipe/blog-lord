@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Post } from '../interfaces/Post'
+import { Post } from '@/app/interfaces/Post'
 
 export const useBlogPosts = () => {
   const [posts, setPosts] = useState<Post[]>([])
@@ -10,7 +10,7 @@ export const useBlogPosts = () => {
     const fetchPosts = async () => {
       try {
         const res = await fetch(
-          'https://public-api.wordpress.com/wp/v2/sites/lordperfumariablog.wordpress.com/posts?_embed&per_page=3'
+          'https://public-api.wordpress.com/wp/v2/sites/lordperfumariablog.wordpress.com/posts'
         )
         const data = await res.json()
         setPosts(data)
@@ -25,7 +25,7 @@ export const useBlogPosts = () => {
     fetchPosts()
   }, [])
 
-  const categoryMap = {
+  const categoryMap: Record<number, string> = {
     112200: 'Beleza',
     143304: 'Perfumes',
   }
