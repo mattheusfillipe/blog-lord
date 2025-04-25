@@ -3,46 +3,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-
-interface Post {
-  id: number
-  title: { rendered: string }
-  excerpt: { rendered: string }
-  link: string
-  date: string
-  jetpack_featured_media_url?: string
-  author: number
-  categories: number[]
-}
-
-const authorMap: Record<number, { name: string; image: string }> = {
-  260441948: { name: 'Laís Barbosa', image: '/lais.jpg' },
-  123456789: { name: 'Matheus Fillipe', image: '/matheus.jpg' },
-}
-
-const categoryMap: Record<number, string> = {
-  112200: 'Beleza',
-  143304: 'Perfumes',
-}
+import { BannerPrimary } from './BannerPrimary'
+import { useBlogPosts } from '../hooks/useBlogPosts'
 
 export function Banner() {
-  const [posts, setPosts] = useState<Post[]>([])
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const res = await fetch(
-          'https://public-api.wordpress.com/wp/v2/sites/lordperfumariablog.wordpress.com/posts?_embed&per_page=3'
-        )
-        const data = await res.json()
-        setPosts(data)
-      } catch (err) {
-        console.error('Erro ao buscar posts:', err)
-      }
-    }
-
-    fetchPosts()
-  }, [])
+  const { posts, categoryMap } = useBlogPosts()
 
   return (
     <section className='px-0 mt-8 w-[1280px]'>
@@ -72,89 +37,7 @@ export function Banner() {
         {/* Banner */}
         <div className='grid grid-cols-[800px_460px] gap-5 h-[493px]'>
           {/* Banner Primário */}
-          {posts[0] && (
-            <div className='relative row-span-2 rounded-xl overflow-hidden p-3'>
-              <Image
-                src={posts[0].jetpack_featured_media_url || '/Banner.jpg'}
-                alt='Banner'
-                fill
-                className='object-cover'
-              />
-
-              <div className='absolute backdrop-blur-md bg-black/30 rounded-xl h-[110px] inset-x-0 mx-3 px-8 py-3 bottom-3 border-gray-300/80 border-[0.5px]'>
-                {/* Titulo e seta */}
-                <div className='flex items-center justify-between'>
-                  <h2
-                    className='text-4xl font-bold max-w-[652px] truncate'
-                    dangerouslySetInnerHTML={{
-                      __html: posts[0].title.rendered,
-                    }}
-                  />
-                  <Link href={posts[0].link} target='_blank'>
-                    <Image
-                      src='/Arrow.svg'
-                      alt=''
-                      width={40}
-                      height={40}
-                      className='cursor-pointer'
-                    />
-                  </Link>
-                </div>
-                {/* Autor, data e categorias */}
-                <div className='flex justify-between items-center mt-4'>
-                  <div className='flex gap-6 items-center'>
-                    <div className='flex items-center gap-2'>
-                      {posts[0] && (
-                        <Image
-                          src='/authorDefault.png'
-                          alt='Foto autor do post'
-                          width={28}
-                          height={28}
-                          className='object-cover rounded-full overflow-hidden w-7 h-7'
-                        />
-                      )}
-                      <p className='font-medium'>
-                        {authorMap[posts[0].author]?.name || 'Lord Perfumaria'}
-                      </p>
-                    </div>
-
-                    <div className='flex gap-2 items-center'>
-                      <Image
-                        src='/Calendar.svg'
-                        alt='Calendário ícone'
-                        width={24}
-                        height={24}
-                      />
-                      <p className='font-medium'>
-                        {new Date(posts[0].date).toLocaleDateString('pt-BR', {
-                          day: '2-digit',
-                          month: 'short',
-                          year: 'numeric',
-                        })}
-                      </p>
-                    </div>
-                  </div>
-                  {posts[0]?.categories.length > 0 && (
-                    <div className='flex gap-2 items-center'>
-                      {posts[0].categories.map((id) => {
-                        const name = categoryMap[id]
-                        return (
-                          name && (
-                            <div
-                              key={id}
-                              className='border-[0.5px] bg-black/20 border-[var(--background)] rounded-md py-1 px-2'
-                            >
-                              <p className='text-[12px]'>{name}</p>
-                            </div>
-                          )
-                        )
-                      })}
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          )}
+          <BannerPrimary post={posts[0]} categoryMap={categoryMap} />
 
           {/* Banner secundário 1 */}
           <div className='relative rounded-xl overflow-hidden'>
