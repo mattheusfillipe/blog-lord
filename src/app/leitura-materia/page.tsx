@@ -8,7 +8,7 @@ export default function LeituraMateria() {
       {/* Imagem principal */}
       <div className='relative rounded-xl h-96 overflow-hidden p-3'>
         <Image src='/Banner.jpg' alt='Banner' fill className='object-cover' />
-        <div className='absolute backdrop-blur-md bg-black/30 rounded-xl h-[110px] inset-x-0 mx-3 px-8 py-3 bottom-3 border-gray-300/80 border-[0.5px]'>
+        <div className='absolute backdrop-blur-md bg-black/40 rounded-xl h-[110px] inset-x-0 mx-3 px-8 py-3 bottom-3 border-gray-300/80 border-[0.5px]'>
           <div className='flex items-center justify-between'>
             <h2 className='text-4xl font-bold max-w-[900px] line-clamp-2'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -215,7 +215,7 @@ export default function LeituraMateria() {
             />
 
             {/* Overlay com informações do post */}
-            <div className='absolute flex justify-between items-center bg-black/30 rounded-lg top-3 mx-3 px-4 py-2 border-gray-300/80 border-[0.5px] backdrop-blur-md'>
+            <div className='absolute flex justify-between items-center bg-black/40 rounded-lg top-3 mx-3 px-4 py-2 border-gray-300/80 border-[0.5px] backdrop-blur-md'>
               <div className='flex gap-3 items-center'>
                 <div className='flex items-center gap-1'>
                   <Image
@@ -246,17 +246,17 @@ export default function LeituraMateria() {
 
             {/* Overlay com categorias */}
             <div className='absolute top-3 right-3 flex gap-2 items-center '>
-              <div className='border-[0.5px] bg-black/30 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
+              <div className='border-[0.5px] bg-black/40 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
                 <p className='text-[12px]'>Beleza</p>
               </div>
 
-              <div className='border-[0.5px] bg-black/30 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
+              <div className='border-[0.5px] bg-black/40 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
                 <p className='text-[12px]'>Perfume</p>
               </div>
             </div>
 
             {/* Overlay com título e botão de leitura */}
-            <div className='absolute flex justify-between backdrop-blur-md bg-black/30 rounded-xl inset-x-0 py-2 px-4 bottom-3 mx-3 border-gray-300/80 border-[0.5px]'>
+            <div className='absolute flex justify-between backdrop-blur-md bg-black/40 rounded-xl inset-x-0 py-2 px-4 bottom-3 mx-3 border-gray-300/80 border-[0.5px]'>
               <h2 className='font-bold max-w-[400px] truncate'>
                 Lorem ipsum dolor sit amet, consectetur ad...
               </h2>
@@ -281,7 +281,7 @@ export default function LeituraMateria() {
             />
 
             {/* Overlay com informações do post */}
-            <div className='absolute flex justify-between items-center bg-black/30 rounded-lg top-3 mx-3 px-4 py-2 border-gray-300/80 border-[0.5px] backdrop-blur-md'>
+            <div className='absolute flex justify-between items-center bg-black/40 rounded-lg top-3 mx-3 px-4 py-2 border-gray-300/80 border-[0.5px] backdrop-blur-md'>
               <div className='flex gap-3 items-center'>
                 <div className='flex items-center gap-1'>
                   <Image
@@ -312,17 +312,17 @@ export default function LeituraMateria() {
 
             {/* Overlay com categorias */}
             <div className='absolute top-3 right-3 flex gap-2 items-center '>
-              <div className='border-[0.5px] bg-black/30 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
+              <div className='border-[0.5px] bg-black/40 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
                 <p className='text-[12px]'>Beleza</p>
               </div>
 
-              <div className='border-[0.5px] bg-black/30 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
+              <div className='border-[0.5px] bg-black/40 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
                 <p className='text-[12px]'>Perfume</p>
               </div>
             </div>
 
             {/* Overlay com título e botão de leitura */}
-            <div className='absolute flex justify-between backdrop-blur-md bg-black/30 rounded-xl inset-x-0 py-2 px-4 bottom-3 mx-3 border-gray-300/80 border-[0.5px]'>
+            <div className='absolute flex justify-between backdrop-blur-md bg-black/40 rounded-xl inset-x-0 py-2 px-4 bottom-3 mx-3 border-gray-300/80 border-[0.5px]'>
               <h2 className='font-bold max-w-[400px] truncate'>
                 Lorem ipsum dolor sit amet, consectetur ad...
               </h2>
@@ -347,7 +347,7 @@ export default function LeituraMateria() {
             />
 
             {/* Overlay com informações do post */}
-            <div className='absolute flex justify-between items-center bg-black/30 rounded-lg top-3 mx-3 px-4 py-2 border-gray-300/80 border-[0.5px] backdrop-blur-md'>
+            <div className='absolute flex justify-between items-center bg-black/40 rounded-lg top-3 mx-3 px-4 py-2 border-gray-300/80 border-[0.5px] backdrop-blur-md'>
               <div className='flex gap-3 items-center'>
                 <div className='flex items-center gap-1'>
                   <Image
@@ -378,17 +378,17 @@ export default function LeituraMateria() {
 
             {/* Overlay com categorias */}
             <div className='absolute top-3 right-3 flex gap-2 items-center '>
-              <div className='border-[0.5px] bg-black/30 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
+              <div className='border-[0.5px] bg-black/40 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
                 <p className='text-[12px]'>Beleza</p>
               </div>
 
-              <div className='border-[0.5px] bg-black/30 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
+              <div className='border-[0.5px] bg-black/40 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
                 <p className='text-[12px]'>Perfume</p>
               </div>
             </div>
 
             {/* Overlay com título e botão de leitura */}
-            <div className='absolute flex justify-between backdrop-blur-md bg-black/30 rounded-xl inset-x-0 py-2 px-4 bottom-3 mx-3 border-gray-300/80 border-[0.5px]'>
+            <div className='absolute flex justify-between backdrop-blur-md bg-black/40 rounded-xl inset-x-0 py-2 px-4 bottom-3 mx-3 border-gray-300/80 border-[0.5px]'>
               <h2 className='font-bold max-w-[400px] truncate'>
                 Lorem ipsum dolor sit amet, consectetur ad...
               </h2>

@@ -22,7 +22,7 @@ export function BannerPrimary({
             />
           )}
 
-          <div className='absolute backdrop-blur-md bg-black/30 rounded-xl h-[110px] inset-x-0 mx-3 px-8 py-3 bottom-3 border-gray-300/80 border-[0.5px]'>
+          <div className='absolute backdrop-blur-md bg-black/40 rounded-xl h-[110px] inset-x-0 mx-3 px-8 py-3 bottom-3 border-gray-300/80 border-[0.5px]'>
             {/* Titulo e seta */}
             <div className='flex items-center justify-between'>
               <h2

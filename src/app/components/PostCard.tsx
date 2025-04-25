@@ -25,7 +25,7 @@ export function PostCard({
         <Image src={banner} alt='Banner' fill className='object-cover' />
 
         {/* Overlay com informações do post */}
-        <div className='absolute flex justify-between items-center bg-black/30 rounded-lg top-3 mx-3 px-4 py-2 border-gray-300/80 border-[0.5px] backdrop-blur-md'>
+        <div className='absolute flex justify-between items-center bg-black/40 rounded-lg top-3 mx-3 px-4 py-2 border-gray-300/80 border-[0.5px] backdrop-blur-md'>
           <div className='flex gap-3 items-center'>
             <div className='flex items-center gap-1'>
               <Image
@@ -55,7 +55,7 @@ export function PostCard({
           {categories.map((cat, index) => (
             <div
               key={index}
-              className='border-[0.5px] bg-black/30 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'
+              className='border-[0.5px] bg-black/40 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'
             >
               <p className='text-[12px]'>{cat}</p>
             </div>
@@ -63,7 +63,7 @@ export function PostCard({
         </div>
 
         {/* Botão de leitura */}
-        <button className='absolute cursor-pointer backdrop-blur-md bg-black/30 rounded-xl py-2 px-4 bottom-3 right-3 border-gray-300/80 border-[0.5px]'>
+        <button className='absolute cursor-pointer backdrop-blur-md bg-black/40 rounded-xl py-2 px-4 bottom-3 right-3 border-gray-300/80 border-[0.5px]'>
           <Image src='/Arrow.svg' alt='Ícone de seta' width={20} height={20} />
         </button>
       </div>

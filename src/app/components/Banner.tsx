@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { BannerPrimary } from './BannerPrimary'
 import { useBlogPosts } from '@/hooks/useBlogPosts'
+import { BannerSecondary } from './BannerSecondary'
 
 export function Banner() {
   const { posts, categoryMap } = useBlogPosts()
@@ -39,134 +40,9 @@ export function Banner() {
           <BannerPrimary post={posts[0]} categoryMap={categoryMap} />
 
           {/* Banner secundário 1 */}
-          <div className='relative rounded-xl overflow-hidden'>
-            <Image
-              src='/Banner.jpg'
-              alt='Banner'
-              fill
-              className='object-cover'
-            />
-
-            {/* Overlay com informações do post */}
-            <div className='absolute flex justify-between items-center bg-black/30 rounded-lg top-3 mx-3 px-4 py-2 border-gray-300/80 border-[0.5px] backdrop-blur-md'>
-              <div className='flex gap-3 items-center'>
-                <div className='flex items-center gap-1'>
-                  <Image
-                    src='/Banner.jpg'
-                    alt='Foto autor do post'
-                    width={16}
-                    height={16}
-                    className='object-cover rounded-full overflow-hidden w-4 h-4'
-                  />
-                  <p className='text-sm font-medium text-[var-(--primary)]'>
-                    Jane Doe
-                  </p>
-                </div>
-
-                <div className='flex gap-1 items-center'>
-                  <Image
-                    src='/Calendar.svg'
-                    alt='Calendário ícone'
-                    width={16}
-                    height={16}
-                  />
-                  <p className='text-sm font-medium text-[var-(--primary)]'>
-                    12 Out, 2025
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Overlay com categorias */}
-            <div className='absolute top-3 right-3 flex gap-2 items-center '>
-              <div className='border-[0.5px] bg-black/30 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
-                <p className='text-[12px]'>Beleza</p>
-              </div>
-
-              <div className='border-[0.5px] bg-black/30 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
-                <p className='text-[12px]'>Perfume</p>
-              </div>
-            </div>
-
-            {/* Overlay com título e botão de leitura */}
-            <div className='absolute flex justify-between backdrop-blur-md bg-black/30 rounded-xl inset-x-0 py-2 px-4 bottom-3 mx-3 border-gray-300/80 border-[0.5px]'>
-              <h2 className='font-bold max-w-[400px] truncate'>
-                Lorem ipsum dolor sit amet, consectetur ad...
-              </h2>
-              <Image
-                src='/Arrow.svg'
-                alt=''
-                width={24}
-                height={24}
-                className='cursor-pointer'
-              />
-            </div>
-          </div>
-
+          <BannerSecondary post={posts[1]} categoryMap={categoryMap} />
           {/* Banner secundário 2 */}
-          <div className='relative rounded-xl overflow-hidden'>
-            <Image
-              src='/Banner.jpg'
-              alt='Banner'
-              fill
-              className='object-cover'
-            />
-
-            {/* Overlay com informações do post */}
-            <div className='absolute flex justify-between items-center bg-black/30 rounded-lg top-3 mx-3 px-4 py-2 border-gray-300/80 border-[0.5px] backdrop-blur-md'>
-              <div className='flex gap-3 items-center'>
-                <div className='flex items-center gap-1'>
-                  <Image
-                    src='/Banner.jpg'
-                    alt='Foto autor do post'
-                    width={16}
-                    height={16}
-                    className='object-cover rounded-full overflow-hidden w-4 h-4'
-                  />
-                  <p className='text-sm font-medium text-[var-(--primary)]'>
-                    Jane Doe
-                  </p>
-                </div>
-
-                <div className='flex gap-1 items-center'>
-                  <Image
-                    src='/Calendar.svg'
-                    alt='Calendário ícone'
-                    width={16}
-                    height={16}
-                  />
-                  <p className='text-sm font-medium text-[var-(--primary)]'>
-                    12 Out, 2025
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Overlay com categorias */}
-            <div className='absolute top-3 right-3 flex gap-2 items-center '>
-              <div className='border-[0.5px] bg-black/30 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
-                <p className='text-[12px]'>Beleza</p>
-              </div>
-
-              <div className='border-[0.5px] bg-black/30 border-[var(--background)] rounded-md py-1 px-2 backdrop-blur-md'>
-                <p className='text-[12px]'>Perfume</p>
-              </div>
-            </div>
-
-            {/* Overlay com título e botão de leitura */}
-            <div className='absolute flex justify-between backdrop-blur-md bg-black/30 rounded-xl inset-x-0 py-2 px-4 bottom-3 mx-3 border-gray-300/80 border-[0.5px]'>
-              <h2 className='font-bold max-w-[400px] truncate'>
-                Lorem ipsum dolor sit amet, consectetur ad...
-              </h2>
-              <Image
-                src='/Arrow.svg'
-                alt=''
-                width={24}
-                height={24}
-                className='cursor-pointer'
-              />
-            </div>
-          </div>
+          <BannerSecondary post={posts[2]} categoryMap={categoryMap} />
         </div>
       </div>
     </section>
