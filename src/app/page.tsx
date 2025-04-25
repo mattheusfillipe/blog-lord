@@ -1,16 +1,5 @@
-import { Banner } from './components/Banner'
-import { Instagram } from './components/Instagram'
-import { Lancamentos } from './components/Lancamentos'
-import { Newsletter } from './components/Newsletter'
+import { Home } from '@/app/components/HomeClient'
 
-export default function Home() {
-  return (
-    <>
-      <Banner />
-      <Instagram />
-      <Lancamentos />
-      <Newsletter />
-      {/* Outras seções */}
-    </>
-  )
+export default function Page() {
+  return <Home />
 }

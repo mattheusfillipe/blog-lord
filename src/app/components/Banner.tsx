@@ -2,9 +2,8 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 import { BannerPrimary } from './BannerPrimary'
-import { useBlogPosts } from '../hooks/useBlogPosts'
+import { useBlogPosts } from '@/hooks/useBlogPosts'
 
 export function Banner() {
   const { posts, categoryMap } = useBlogPosts()

@@ -13,12 +13,14 @@ export function BannerPrimary({
     <>
       {post && (
         <div className='relative row-span-2 rounded-xl overflow-hidden p-3'>
-          <Image
-            src={post.jetpack_featured_media_url || '/Banner.jpg'}
-            alt='Banner'
-            fill
-            className='object-cover'
-          />
+          {post.jetpack_featured_media_url && (
+            <Image
+              src={post.jetpack_featured_media_url}
+              alt='Banner'
+              fill
+              className='object-cover'
+            />
+          )}
 
           <div className='absolute backdrop-blur-md bg-black/30 rounded-xl h-[110px] inset-x-0 mx-3 px-8 py-3 bottom-3 border-gray-300/80 border-[0.5px]'>
             {/* Titulo e seta */}
