@@ -143,12 +143,7 @@ export default function LeituraMateria() {
         <div className='flex gap-10 mt-6'>
           {/* Card1  */}
           <div className='flex flex-col gap-1'>
-            <ProductCard
-              image='/image.png'
-              title='Toy Boy'
-              subtitle='Moschino - Masculino'
-              link='#'
-            />
+            <ProductCard image='/image.png' title='Toy Boy' link='#' />
             <button className='bg-[var(--primary)] py-1.5 rounded-lg font-semibold'>
               R$999,99
             </button>
@@ -156,12 +151,7 @@ export default function LeituraMateria() {
 
           {/* Card2  */}
           <div className='flex flex-col gap-1'>
-            <ProductCard
-              image='/image-1.png'
-              title='Toy Boy'
-              subtitle='Moschino - Masculino'
-              link='#'
-            />
+            <ProductCard image='/image-1.png' title='Toy Boy' link='#' />
             <button className='bg-[var(--primary)] py-1.5 rounded-lg font-semibold'>
               R$999,99
             </button>
@@ -169,12 +159,7 @@ export default function LeituraMateria() {
 
           {/* Card3  */}
           <div className='flex flex-col gap-1'>
-            <ProductCard
-              image='/image-1.png'
-              title='Toy Boy'
-              subtitle='Moschino - Masculino'
-              link='#'
-            />
+            <ProductCard image='/image-1.png' title='Toy Boy' link='#' />
             <button className='bg-[var(--primary)] py-1.5 rounded-lg font-semibold'>
               R$999,99
             </button>
