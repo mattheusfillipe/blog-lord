@@ -22,10 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='pt-BR' className={sourceSans.variable}>
-      <body className='antialiased flex flex-col items-center mt-10'>
-        <Header />
-        {children}
-        <Footer />
+      <body className='antialiased flex flex-col items-center px-4 mt-10 w-full overflow-x-hidden'>
+        <div className='w-full max-w-7xl'>
+          <Header />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   )

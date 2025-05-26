@@ -2,7 +2,7 @@ import InstagramFeed from './InstagramFeed'
 
 export function Instagram() {
   return (
-    <section className='mx-0 mt-12 w-[1280px] rounded-xl'>
+    <section className='mx-0 mt-12 w-full max-w-7xl rounded-xl'>
       <div className='flex items-start p-4 justify-between mb-6 h-64 bg-[var(--primary)] rounded-xl'>
         <div className='flex items-center gap-2'>
           <svg

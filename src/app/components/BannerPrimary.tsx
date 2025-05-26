@@ -12,7 +12,7 @@ export function BannerPrimary({
   return (
     <>
       {post && (
-        <div className='relative row-span-2 rounded-xl overflow-hidden p-3'>
+        <div className='relative w-full pb-[56.25%] row-span-2 rounded-xl overflow-hidden p-3'>
           {post.jetpack_featured_media_url && (
             <Image
               src={post.jetpack_featured_media_url}

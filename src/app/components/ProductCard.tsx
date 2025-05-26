@@ -9,8 +9,8 @@ interface ProductCardProps {
 export function ProductCard({ image, title, link }: ProductCardProps) {
   return (
     <div className='w-[223px] h-[355px]'>
-      <div className='relative w-[223px] h-[300px] bg-white rounded-xl overflow-hidden outline-[0.5px] outline-[var(--primary)] flex items-center justify-center'>
-        <img src={image} alt={title} className='object-contain' />
+      <div className='relative w-[223px] h-[300px] bg-white rounded-xl outline-[1px] outline-[var(--primary)] flex items-center justify-center'>
+        <img src={image} alt={title} className='object-fill' />
       </div>
       <div className='flex items-center justify-between mt-2 px-2.5'>
         <div>
