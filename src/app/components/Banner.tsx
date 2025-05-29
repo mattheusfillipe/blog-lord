@@ -68,6 +68,7 @@ export function Banner() {
         {/* Swiper para telas menores */}
         <div className='block md:hidden'>
           <Swiper
+            modules={[Autoplay, Pagination]}
             spaceBetween={16}
             slidesPerView={1}
             pagination={{ clickable: true }}

@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import SearchInput from './SearchInput'
 import Link from 'next/link'
+import { MobileMenu } from './MobileMenu'
 
 export function Header() {
   return (
@@ -25,6 +26,7 @@ export function Header() {
           <SearchInput />
         </div>
 
+        {/* Menu Desktop  */}
         <nav className='gap-6 font-semibold hidden md:flex'>
           <Link
             href='/'
@@ -53,6 +55,10 @@ export function Header() {
           </Link>
         </nav>
 
+        {/* Menu mobile  */}
+        <MobileMenu />
+
+        {/* Redes sociais */}
         <div className='hidden md:flex gap-4'>
           <a href='https://www.instagram.com/lordperfumaria/' target='_blank'>
             <Image src='/Instagram.svg' alt='Logo' width={24} height={24} />

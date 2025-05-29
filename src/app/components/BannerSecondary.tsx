@@ -12,7 +12,7 @@ export function BannerSecondary({
   return (
     <>
       {post && (
-        <div className='relative rounded-xl pb-[56.25%] overflow-hidden'>
+        <div className='relative rounded-xl pb-[56.25] overflow-hidden'>
           {post.jetpack_featured_media_url && (
             <Image
               src={post.jetpack_featured_media_url}
