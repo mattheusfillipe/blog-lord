@@ -43,7 +43,7 @@ export function MobileMenu() {
 
       {/* Menu dropdown */}
       <nav
-        className={`absolute top-12 right-0 w-40 bg-black/40 border border-gray-300/80 backdrop-blur-md rounded-xl shadow-lg transition-all duration-300 px-6 py-4 ${
+        className={`absolute top-12 right-0 w-56 bg-black/40 border border-gray-300/80 backdrop-blur-md rounded-xl shadow-lg transition-all duration-300 px-6 py-4 ${
           open ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
       >
@@ -63,14 +63,14 @@ export function MobileMenu() {
                 <a
                   href={href}
                   target='_blank'
-                  className='relative inline-block text-left w-full border-b pb-2'
+                  className='relative inline-block text-left w-full border-b pb-2 border-gray-300/80 '
                 >
                   {label}
                 </a>
               ) : (
                 <button
                   onClick={() => handleClick(href)}
-                  className='relative inline-block text-left w-full border-b pb-2'
+                  className='relative inline-block text-left w-full border-b pb-2 border-gray-300/80 '
                 >
                   {label}
                 </button>
@@ -78,7 +78,7 @@ export function MobileMenu() {
             </li>
           ))}
           <li>
-            <div className='flex gap-5 mt-2'>
+            <div className='flex gap-5 mt-2 justify-between'>
               <a
                 href='https://www.instagram.com/lordperfumaria/'
                 target='_blank'
