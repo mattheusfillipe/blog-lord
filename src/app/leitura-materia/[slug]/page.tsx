@@ -21,17 +21,6 @@ type Params = {
   slug: string
 }
 
-export async function generateStaticParams() {
-  const res = await fetch(
-    'https://public-api.wordpress.com/wp/v2/sites/lordperfumariablog.wordpress.com/posts?per_page=100'
-  )
-  const posts: Post[] = await res.json()
-
-  return posts.map((post) => ({
-    slug: post.slug,
-  }))
-}
-
 export default async function LeituraMateria(props: { params: Params }) {
   const { slug } = props.params
 
@@ -59,31 +48,25 @@ export default async function LeituraMateria(props: { params: Params }) {
   )
   const allPosts: Post[] = await allPostsRes.json()
 
-  const currentIndex = allPosts.findIndex((p) => p.slug === slug)
-
-  function getRelatedPosts(
+  function getNextPosts(
     allPosts: Post[],
     currentIndex: number,
-    max = 3
+    count = 3
   ): Post[] {
-    const related: Post[] = []
+    const result: Post[] = []
+    let i = (currentIndex + 1) % allPosts.length
 
-    for (
-      let i = currentIndex + 1;
-      i < allPosts.length && related.length < max;
-      i++
-    ) {
-      related.push(allPosts[i])
+    while (result.length < count && allPosts.length > 1) {
+      if (i === currentIndex) break
+      result.push(allPosts[i])
+      i = (i + 1) % allPosts.length
     }
 
-    for (let i = currentIndex - 1; i >= 0 && related.length < max; i--) {
-      related.push(allPosts[i])
-    }
-
-    return related
+    return result
   }
 
-  const relatedPosts = getRelatedPosts(allPosts, currentIndex, 3)
+  const currentIndex = allPosts.findIndex((p) => p.slug === slug)
+  const relatedPosts = getNextPosts(allPosts, currentIndex, 3)
 
   return (
     <main className='mt-12 flex flex-col w-[1280px] gap-6 justify-center'>
