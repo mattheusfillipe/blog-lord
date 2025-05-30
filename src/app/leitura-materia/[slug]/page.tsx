@@ -102,7 +102,7 @@ export default function PostClient() {
         </Link>
       </div>
 
-      <div className='flex justify-between gap-5 mt-6'>
+      <div className='flex flex-col md:flex-row justify-between gap-5'>
         {relatedPosts.map((related) => (
           <div
             key={related.id}
@@ -116,7 +116,7 @@ export default function PostClient() {
             />
             <div className='absolute flex justify-between backdrop-blur-md bg-black/40 rounded-xl inset-x-0 py-2 px-4 bottom-3 mx-3 border-gray-300/80 border-[0.5px]'>
               <h2
-                className='font-bold max-w-[400px] truncate'
+                className='font-bold truncate'
                 dangerouslySetInnerHTML={{ __html: related.title.rendered }}
               />
               <Link href={`/leitura-materia/${related.slug}`}>
