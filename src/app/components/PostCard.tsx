@@ -19,12 +19,15 @@ export function PostCard({
   link,
 }: PostCardProps) {
   return (
-    <div className='w-[413px] h-auto'>
-      <div className='relative w-[413px] h-56 rounded-xl overflow-hidden'>
-        <Image src={banner} alt='Banner' fill className='object-cover' />
+    <div className='h-auto'>
+      <div className='relative w-full pb-[56.25%] rounded-xl overflow-hidden hover:transform hover:scale-105 transition-transform duration-300 ease-in-out'>
+        {/* Banner do post */}
+        <Link href={link}>
+          <Image src={banner} alt='Banner' fill className='object-cover' />
+        </Link>
 
         {/* Overlay com informações do post */}
-        <div className='absolute flex justify-between items-center bg-black/40 rounded-lg top-3 mx-3 px-4 py-2 border-gray-300/80 border-[0.5px] backdrop-blur-md'>
+        <div className='absolute flex justify-between items-center bg-black/40 rounded-lg bottom-3 mx-3 px-4 py-2 border-gray-300/80 border-[0.5px] backdrop-blur-md'>
           <div className='flex gap-3 items-center'>
             <div className='flex items-center gap-1'>
               <Image
@@ -36,7 +39,6 @@ export function PostCard({
               />
               <p className='text-sm text-[var(--background)]'>Bella</p>
             </div>
-
             <div className='flex gap-1 items-center'>
               <Image
                 src='/Calendar.svg'
@@ -50,7 +52,7 @@ export function PostCard({
         </div>
 
         {/* Categorias */}
-        <div className='absolute top-3 right-3 flex gap-2 items-center'>
+        <div className='absolute top-3 left-3 flex gap-2 items-center'>
           {categories.map((cat, index) => (
             <div
               key={index}
@@ -62,8 +64,8 @@ export function PostCard({
         </div>
 
         {/* Botão de leitura */}
-        <Link href={link} target='_blank'>
-          <button className='absolute cursor-pointer backdrop-blur-md bg-black/40 rounded-xl py-2 px-4 bottom-3 right-3 border-gray-300/80 border-[0.5px]'>
+        <Link href={link}>
+          <button className='absolute cursor-pointer backdrop-blur-md bg-black/40 rounded-xl py-2 px-4 top-3 md:bottom-3 right-3 max-h-10 border-gray-300/80 border-[0.5px]'>
             <Image
               src='/Arrow.svg'
               alt='Ícone de seta'
@@ -74,10 +76,13 @@ export function PostCard({
         </Link>
       </div>
 
-      <h2
-        className='line-clamp-1 text-[var(--secondary)] mt-2.5 font-bold'
-        dangerouslySetInnerHTML={{ __html: title }}
-      />
+      {/* Título e descrição */}
+      <Link href={link}>
+        <h2
+          className='line-clamp-1 text-[var(--secondary)] mt-4 font-bold text-2xl hover:underline transition-all duration-300 ease-in-out'
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
+      </Link>
 
       <p
         className='line-clamp-4 text-[var(--secondary)] text-justify mt-1'

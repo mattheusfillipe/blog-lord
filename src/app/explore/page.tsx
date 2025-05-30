@@ -8,7 +8,7 @@ export default function Explore() {
   const { posts, categoryMap } = useBlogPosts()
 
   return (
-    <main className='w-[1280px] flex flex-col mt-12'>
+    <main className='max-w-7xl w-full flex flex-col mt-12'>
       <div className='flex items-center gap-2'>
         <Image
           src='/Journal.svg'
@@ -20,7 +20,7 @@ export default function Explore() {
       </div>
 
       {/* Cards */}
-      <div className='flex flex-wrap gap-5 mt-8'>
+      <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8'>
         {posts.map((post) => (
           <PostCard
             key={post.id}
@@ -35,7 +35,7 @@ export default function Explore() {
               .filter(Boolean)}
             title={post.title.rendered}
             description={post.excerpt.rendered}
-            link={post.link}
+            link={`/leitura-materia/${post.slug}`}
           />
         ))}
       </div>

@@ -37,23 +37,20 @@ export function Lancamentos() {
       {/* Swiper para telas menores */}
       <div className='xl:hidden flex mt-6 w-full'>
         <Swiper
-          spaceBetween={0}
+          spaceBetween={16}
           grabCursor={true}
           breakpoints={{
             0: {
               slidesPerView: 1.4, // celulares menores
             },
             550: {
-              slidesPerView: 2.5,
+              slidesPerView: 2,
             },
             768: {
               slidesPerView: 3,
             },
             1024: {
               slidesPerView: 4,
-            },
-            1280: {
-              slidesPerView: 5,
             },
           }}
         >

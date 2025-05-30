@@ -25,89 +25,53 @@ export default function PostClient() {
     count = 3
   ) => {
     const result: typeof posts = []
-    let next = currentIndex + 1
 
-    while (result.length < count && next < allPosts.length) {
-      result.push(allPosts[next])
-      next++
+    let i = currentIndex + 1
+    while (result.length < count && i < allPosts.length) {
+      result.push(allPosts[i])
+      i++
     }
 
-    let back = currentIndex - 1
-    while (result.length < count && back >= 0) {
-      result.unshift(allPosts[back])
-      back--
+    // Se não deu 3, preenche com os mais antigos (do começo da lista)
+    i = 0
+    while (result.length < count && i < currentIndex) {
+      result.push(allPosts[i])
+      i++
     }
 
     return result
   }
-
   const relatedPosts = getNextPosts(posts, currentIndex, 3)
 
   return (
-    <main className='mt-12 flex flex-col w-[1280px] gap-6 justify-center'>
+    <main className='mt-10 flex flex-col max-w-7xl gap-6'>
+      {/* Título e descrição */}
+      <div className='flex flex-col justify-between items-baseline'>
+        <h2
+          className='text-4xl font-bold text-[var(--primary)]'
+          dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+        />
+        <p
+          className='text-[var(--secondary)] text-justify mt-4'
+          dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
+        />
+        <p className='flex items-center gap-2 text-[var(--secondary)] font-medium mt-4'>
+          Por
+          <span className='text-[var(--primary)] font-bold -m-1'>Bella</span>
+        </p>
+        <p className='font-light text-[var(--secondary)] text-sm'>
+          {new Date(post.date).toLocaleDateString('pt-BR')}
+        </p>
+      </div>
+
       {/* Banner */}
-      <div className='relative rounded-xl pb-[40%] overflow-hidden p-3'>
+      <div className='relative rounded-xl max-w-7xl pb-[56.25%] overflow-hidden'>
         <Image
           src={post.jetpack_featured_media_url || '/Banner.jpg'}
           alt='Banner'
           fill
-          className='object-cover'
+          className='absolute object-fill'
         />
-        <div className='absolute backdrop-blur-md bg-black/40 rounded-xl h-[110px] inset-x-0 mx-3 px-8 py-3 bottom-3 border-gray-300/80 border-[0.5px]'>
-          <div className='flex items-center h-full justify-between'>
-            <h2
-              className='text-4xl font-bold max-w-[900px] line-clamp-2'
-              dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-            />
-
-            <div className='flex flex-col items-end gap-4'>
-              <div className='flex gap-6 items-center'>
-                <div className='flex items-center gap-2'>
-                  <Image
-                    src='/authorDefault.png'
-                    alt='Autor'
-                    width={28}
-                    height={28}
-                    className='object-cover rounded-full w-7 h-7'
-                  />
-                  <p className='font-medium'>Bella</p>
-                </div>
-
-                <div className='flex gap-2 items-center'>
-                  <Image
-                    src='/Calendar.svg'
-                    alt='Calendário ícone'
-                    width={24}
-                    height={24}
-                  />
-                  <p className='font-medium'>
-                    {new Date(post.date).toLocaleDateString('pt-BR', {
-                      day: '2-digit',
-                      month: 'short',
-                      year: 'numeric',
-                    })}
-                  </p>
-                </div>
-              </div>
-
-              {post.categories.length > 0 && (
-                <div className='flex gap-2 items-center'>
-                  {post.categories.map(
-                    (id) =>
-                      categoryMap[id] && (
-                        <div
-                          key={id}
-                          className='border-[0.5px] bg-black/20 border-[var(--background)] rounded-md py-1 px-2'
-                        >
-                          <p className='text-[12px]'>{categoryMap[id]}</p>
-                        </div>
-                      )
-                  )}
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Conteúdo */}
@@ -118,6 +82,7 @@ export default function PostClient() {
 
       {/* Leia Mais */}
       <div className='w-full h-px bg-gray-300 mt-8' />
+      {/* Título e ver todas  */}
       <div className='flex items-center justify-between mt-6'>
         <div className='flex items-center gap-2'>
           <Image

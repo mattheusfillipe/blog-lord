@@ -53,9 +53,10 @@ export function Banner() {
         <div className='hidden md:flex lg:hidden'>
           <Swiper
             modules={[Autoplay, Pagination]}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            loop={true}
             spaceBetween={16}
             slidesPerView={1}
-            pagination={{ clickable: true }}
           >
             {[posts[0], posts[1], posts[2]].map((post, index) => (
               <SwiperSlide key={index}>
@@ -69,9 +70,10 @@ export function Banner() {
         <div className='block md:hidden'>
           <Swiper
             modules={[Autoplay, Pagination]}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            loop={true}
             spaceBetween={16}
             slidesPerView={1}
-            pagination={{ clickable: true }}
           >
             {posts
               .filter((post) => Array.isArray(post.categories))

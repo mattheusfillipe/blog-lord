@@ -30,26 +30,26 @@ export function Header() {
         <nav className='gap-6 font-semibold hidden md:flex'>
           <Link
             href='/'
-            className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+            className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
           >
             Home
           </Link>
           <Link
             href='/explore'
-            className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+            className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
           >
             Explore
           </Link>
           <a
             href='https://lordperfumaria.com.br/'
-            className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+            className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
             target='_blank'
           >
             Compre Online
           </a>
           <Link
             href='/quem-somos'
-            className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+            className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
           >
             Quem Somos
           </Link>
@@ -60,18 +60,31 @@ export function Header() {
 
         {/* Redes sociais */}
         <div className='hidden md:flex gap-4'>
-          <a href='https://www.instagram.com/lordperfumaria/' target='_blank'>
+          <a
+            href='https://www.instagram.com/lordperfumaria/'
+            target='_blank'
+            className='hover:scale-105 transition-all duration-300'
+          >
             <Image src='/Instagram.svg' alt='Logo' width={24} height={24} />
           </a>
-          <a href='https://www.tiktok.com/@lordperfumaria' target='_blank'>
+          <a
+            href='https://www.tiktok.com/@lordperfumaria'
+            target='_blank'
+            className='hover:scale-105 transition-all duration-300'
+          >
             <Image src='/TikTok.svg' alt='Logo' width={24} height={24} />
           </a>
-          <a href='https://www.youtube.com/lordperfumaria' target='_blank'>
+          <a
+            href='https://www.youtube.com/lordperfumaria'
+            target='_blank'
+            className='hover:scale-105 transition-all duration-300'
+          >
             <Image src='/YouTube.svg' alt='Logo' width={24} height={24} />
           </a>
           <a
             href='https://api.whatsapp.com/send/?phone=556133284888&text&type=phone_number&app_absent=0'
             target='_blank'
+            className='hover:scale-105 transition-all duration-300'
           >
             <Image src='/WhatsApp.svg' alt='Logo' width={24} height={24} />
           </a>

@@ -12,7 +12,7 @@ export function BannerTertiary({
   return (
     <>
       {post && (
-        <div className='relative rounded-xl h-96 overflow-hidden'>
+        <div className='relative rounded-xl h-80 overflow-hidden'>
           {post.jetpack_featured_media_url && (
             <Image
               src={post.jetpack_featured_media_url}

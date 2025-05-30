@@ -18,7 +18,7 @@ export function BannerSecondary({
               src={post.jetpack_featured_media_url}
               alt='Banner'
               fill
-              className='object-cover'
+              className='object-cover absolute'
             />
           )}
 
