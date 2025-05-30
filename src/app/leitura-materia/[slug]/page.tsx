@@ -70,7 +70,7 @@ export default function PostClient() {
           src={post.jetpack_featured_media_url || '/Banner.jpg'}
           alt='Banner'
           fill
-          className='absolute object-fill'
+          className='absolute object-cover'
         />
       </div>
 
