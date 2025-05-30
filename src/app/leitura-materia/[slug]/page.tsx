@@ -1,72 +1,47 @@
-import { notFound } from 'next/navigation'
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { useParams } from 'next/navigation'
+import { useBlogPosts } from '@/hooks/useBlogPosts'
+import { notFound } from 'next/navigation'
 
-type Post = {
-  id: number
-  slug: string
-  title: { rendered: string }
-  content: { rendered: string }
-  date: string
-  categories: number[]
-  jetpack_featured_media_url: string
-}
+export default function PostClient() {
+  const { slug } = useParams() as { slug: string }
+  const { posts, loading, error, categoryMap } = useBlogPosts()
 
-type Category = {
-  id: number
-  name: string
-}
+  if (loading)
+    return <div className='bg-gray-300 w-screen h-screen animate-pulse' />
+  if (error || !posts.length) return notFound()
 
-type Params = {
-  slug: string
-}
+  const post = posts.find((p) => p.slug === slug)
+  if (!post) return notFound()
 
-export default async function LeituraMateria(props: { params: Params }) {
-  const { slug } = props.params
+  const currentIndex = posts.findIndex((p) => p.slug === slug)
 
-  // 1. Pega o post atual
-  const res = await fetch(
-    `https://public-api.wordpress.com/wp/v2/sites/lordperfumariablog.wordpress.com/posts?slug=${slug}`
-  )
-  const posts: Post[] = await res.json()
-  if (!posts.length) return notFound()
-  const post = posts[0]
-
-  // 2. Pega todas as categorias
-  const categoriesRes = await fetch(
-    'https://public-api.wordpress.com/wp/v2/sites/lordperfumariablog.wordpress.com/categories'
-  )
-  const allCategories: Category[] = await categoriesRes.json()
-  const categoryMap: Record<number, string> = {}
-  allCategories.forEach((cat) => {
-    categoryMap[cat.id] = cat.name
-  })
-
-  // 3. Busca todos os posts para "leia mais"
-  const allPostsRes = await fetch(
-    'https://public-api.wordpress.com/wp/v2/sites/lordperfumariablog.wordpress.com/posts?per_page=100'
-  )
-  const allPosts: Post[] = await allPostsRes.json()
-
-  function getNextPosts(
-    allPosts: Post[],
+  const getNextPosts = (
+    allPosts: typeof posts,
     currentIndex: number,
     count = 3
-  ): Post[] {
-    const result: Post[] = []
-    let i = (currentIndex + 1) % allPosts.length
+  ) => {
+    const result: typeof posts = []
+    let next = currentIndex + 1
 
-    while (result.length < count && allPosts.length > 1) {
-      if (i === currentIndex) break
-      result.push(allPosts[i])
-      i = (i + 1) % allPosts.length
+    while (result.length < count && next < allPosts.length) {
+      result.push(allPosts[next])
+      next++
+    }
+
+    let back = currentIndex - 1
+    while (result.length < count && back >= 0) {
+      result.unshift(allPosts[back])
+      back--
     }
 
     return result
   }
 
-  const currentIndex = allPosts.findIndex((p) => p.slug === slug)
-  const relatedPosts = getNextPosts(allPosts, currentIndex, 3)
+  const relatedPosts = getNextPosts(posts, currentIndex, 3)
 
   return (
     <main className='mt-12 flex flex-col w-[1280px] gap-6 justify-center'>
@@ -115,22 +90,19 @@ export default async function LeituraMateria(props: { params: Params }) {
                 </div>
               </div>
 
-              {/* Categorias */}
               {post.categories.length > 0 && (
                 <div className='flex gap-2 items-center'>
-                  {post.categories.map((id) => {
-                    const name = categoryMap[id]
-                    return (
-                      name && (
+                  {post.categories.map(
+                    (id) =>
+                      categoryMap[id] && (
                         <div
                           key={id}
                           className='border-[0.5px] bg-black/20 border-[var(--background)] rounded-md py-1 px-2'
                         >
-                          <p className='text-[12px]'>{name}</p>
+                          <p className='text-[12px]'>{categoryMap[id]}</p>
                         </div>
                       )
-                    )
-                  })}
+                  )}
                 </div>
               )}
             </div>

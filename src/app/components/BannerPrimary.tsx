@@ -31,7 +31,7 @@ export function BannerPrimary({
                   __html: post.title.rendered,
                 }}
               />
-              <Link href={post.link} target='_blank'>
+              <Link href={`/leitura-materia/${post.slug}`}>
                 <Image
                   src='/Arrow.svg'
                   alt=''

@@ -83,7 +83,7 @@ export function BannerSecondary({
                 __html: post.title.rendered,
               }}
             ></h2>
-            <Link href={post.link} target='_blank'>
+            <Link href={`/leitura-materia/${post.slug}`}>
               <Image
                 src='/Arrow.svg'
                 alt=''
