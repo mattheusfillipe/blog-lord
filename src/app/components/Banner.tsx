@@ -40,7 +40,7 @@ export function Banner() {
         </div>
 
         {/* Banner */}
-        <div className='hidden lg:grid grid-cols-[0.638fr_0.362fr] gap-5 h-[493px] mb-12'>
+        <div className='hidden lg:grid grid-cols-[1.6fr_1fr] gap-6 grid-rows-2 min-h-[400px] mb-12'>
           {/* Banner Primário */}
           <BannerPrimary post={posts[0]} categoryMap={categoryMap} />
           {/* Banner secundário 1 */}
