@@ -13,21 +13,21 @@ function ExploreContent() {
 
   const filteredPosts = useMemo(() => {
     if (!searchQuery) return posts
-    
+
     const query = searchQuery.toLowerCase()
-    return posts.filter(post => {
+    return posts.filter((post) => {
       // Search in title
       const titleMatch = post.title.rendered.toLowerCase().includes(query)
-      
+
       // Search in excerpt/description
       const excerptMatch = post.excerpt.rendered.toLowerCase().includes(query)
-      
+
       // Search in categories
-      const categoryMatch = post.categories.some(categoryId => {
+      const categoryMatch = post.categories.some((categoryId) => {
         const categoryName = categoryMap[categoryId]
         return categoryName && categoryName.toLowerCase().includes(query)
       })
-      
+
       return titleMatch || excerptMatch || categoryMatch
     })
   }, [posts, searchQuery, categoryMap])
@@ -48,7 +48,9 @@ function ExploreContent() {
 
       {searchQuery && (
         <p className='text-[var(--primary)] mt-2'>
-          {filteredPosts.length} resultado{filteredPosts.length !== 1 ? 's' : ''} encontrado{filteredPosts.length !== 1 ? 's' : ''}
+          {filteredPosts.length} resultado
+          {filteredPosts.length !== 1 ? 's' : ''} encontrado
+          {filteredPosts.length !== 1 ? 's' : ''}
         </p>
       )}
 
@@ -91,7 +93,9 @@ function ExploreContent() {
 
 export default function Explore() {
   return (
-    <Suspense fallback={<div className='bg-gray-300 w-screen h-screen animate-pulse' />}>
+    <Suspense
+      fallback={<div className='bg-gray-300 w-screen h-screen animate-pulse' />}
+    >
       <ExploreContent />
     </Suspense>
   )

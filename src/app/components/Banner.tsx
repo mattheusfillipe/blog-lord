@@ -49,37 +49,39 @@ export function Banner() {
           <BannerSecondary post={posts[2]} categoryMap={categoryMap} />
         </div>
 
-        {/* Swiper para telas médias */}
-        <div className='hidden md:flex lg:hidden'>
+        {/* Swiper para telas médias (768px - 1023px) */}
+        <div className='hidden md:flex lg:hidden w-full min-h-[400px]'>
           <Swiper
             modules={[Autoplay, Pagination]}
             autoplay={{ delay: 5000, disableOnInteraction: false }}
             loop={true}
             spaceBetween={16}
             slidesPerView={1}
+            className='w-full h-full'
           >
             {[posts[0], posts[1], posts[2]].map((post, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={index} className='h-full'>
                 <BannerPrimary post={post} categoryMap={categoryMap} />
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
 
-        {/* Swiper para telas menores */}
-        <div className='block md:hidden'>
+        {/* Swiper para telas menores (< 768px) */}
+        <div className='block md:hidden w-full min-h-[420px]'>
           <Swiper
             modules={[Autoplay, Pagination]}
             autoplay={{ delay: 5000, disableOnInteraction: false }}
             loop={true}
             spaceBetween={16}
             slidesPerView={1}
+            className='w-full h-full'
           >
             {posts
               .filter((post) => Array.isArray(post.categories))
               .slice(0, 3)
               .map((post, index) => (
-                <SwiperSlide key={index}>
+                <SwiperSlide key={index} className='h-full'>
                   <BannerTertiary
                     post={{
                       ...post,
