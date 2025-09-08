@@ -52,7 +52,7 @@ export default function PostClient() {
           dangerouslySetInnerHTML={{ __html: post.title.rendered }}
         />
         <p
-          className='text-[var(--secondary)] text-justify mt-4'
+          className='text-[var(--secondary)] text-xl text-justify mt-4'
           dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
         />
         <p className='flex items-center gap-2 text-[var(--secondary)] font-medium mt-4'>
