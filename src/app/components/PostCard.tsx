@@ -79,7 +79,7 @@ export function PostCard({
       {/* Título e descrição */}
       <Link href={link}>
         <h2
-          className='line-clamp-1 text-[var(--secondary)] mt-4 font-bold text-2xl hover:underline transition-all duration-300 ease-in-out'
+          className='text-[var(--secondary)] mt-4 font-bold text-2xl hover:underline transition-all duration-300 ease-in-out'
           dangerouslySetInnerHTML={{ __html: title }}
         />
       </Link>
