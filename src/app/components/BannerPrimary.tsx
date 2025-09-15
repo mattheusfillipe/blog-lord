@@ -16,13 +16,13 @@ export function BannerPrimary({
           href={`/leitura-materia/${post.slug}`}
           className='block row-span-2'
         >
-          <div className='relative w-full h-full min-h-[400px] rounded-xl overflow-hidden p-3 cursor-pointer group'>
+          <div className='relative w-full h-full min-h-[400px] rounded-xl overflow-hidden p-3 cursor-pointer'>
             {post.jetpack_featured_media_url && (
               <Image
                 src={post.jetpack_featured_media_url}
                 alt='Banner'
                 fill
-                className='object-cover absolute group-hover:scale-105 transition-transform duration-300'
+                className='object-cover absolute hover:scale-105 transition-transform duration-300'
               />
             )}
 
@@ -85,7 +85,7 @@ export function BannerPrimary({
               {/* Titulo e seta */}
               <div className='flex items-center justify-between'>
                 <h2
-                  className='text-4xl font-bold max-w-[630px] cursor-pointer'
+                  className='text-4xl font-bold max-w-[630px] cursor-pointer line-clamp-2'
                   dangerouslySetInnerHTML={{
                     __html: post.title.rendered,
                   }}

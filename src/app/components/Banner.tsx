@@ -68,7 +68,7 @@ export function Banner() {
         </div>
 
         {/* Swiper para telas menores (< 768px) */}
-        <div className='block md:hidden w-full min-h-[420px]'>
+        <div className='block md:hidden w-full min-h-96'>
           <Swiper
             modules={[Autoplay, Pagination]}
             autoplay={{ delay: 5000, disableOnInteraction: false }}

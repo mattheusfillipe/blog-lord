@@ -13,13 +13,13 @@ export function BannerSecondary({
     <>
       {post && (
         <Link href={`/leitura-materia/${post.slug}`} className='block'>
-          <div className='relative rounded-xl pb-[56.25%] overflow-hidden cursor-pointer group'>
+          <div className='relative rounded-xl pb-[56.25%] overflow-hidden cursor-pointer'>
             {post.jetpack_featured_media_url && (
               <Image
                 src={post.jetpack_featured_media_url}
                 alt='Banner'
                 fill
-                className='object-cover absolute group-hover:scale-105 transition-transform duration-300'
+                className='object-cover absolute hover:scale-105 transition-transform duration-300'
               />
             )}
 

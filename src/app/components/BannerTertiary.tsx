@@ -13,13 +13,13 @@ export function BannerTertiary({
     <>
       {post && (
         <Link href={`/leitura-materia/${post.slug}`} className='block'>
-          <div className='relative rounded-xl min-h-[420px] overflow-hidden cursor-pointer group'>
+          <div className='relative rounded-xl min-h-96 overflow-hidden cursor-pointer'>
             {post.jetpack_featured_media_url && (
               <Image
                 src={post.jetpack_featured_media_url}
                 alt='Banner'
                 fill
-                className='object-cover group-hover:scale-105 transition-transform duration-300'
+                className='object-cover hover:scale-105 transition-transform duration-300'
               />
             )}
 
@@ -79,7 +79,7 @@ export function BannerTertiary({
             {/* Overlay com título e botão de leitura */}
             <div className='absolute flex justify-between backdrop-blur-md bg-black/40 rounded-xl inset-x-0 py-2 px-4 bottom-3 mx-3 border-gray-300/80 border-[0.5px]'>
               <h2
-                className='font-bold max-w-[400px] truncate cursor-pointer'
+                className='font-bold max-w-[400px] line-clamp-2 cursor-pointer text-lg'
                 dangerouslySetInnerHTML={{
                   __html: post.title.rendered,
                 }}
