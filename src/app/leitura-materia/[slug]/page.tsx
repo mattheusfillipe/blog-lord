@@ -46,32 +46,38 @@ export default function PostClient() {
   return (
     <main className='mt-10 flex flex-col max-w-7xl gap-6'>
       {/* Título e descrição */}
-      <div className='flex flex-col justify-between items-baseline'>
-        <h2
-          className='text-4xl font-bold text-[var(--primary)]'
-          dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-        />
-        <p
-          className='text-[var(--secondary)] text-xl text-justify mt-4'
-          dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
-        />
-        <p className='flex items-center gap-2 text-[var(--secondary)] font-medium mt-4'>
-          Por
-          <span className='text-[var(--primary)] font-bold -m-1'>Bella</span>
-        </p>
-        <p className='font-light text-[var(--secondary)] text-sm'>
-          {new Date(post.date).toLocaleDateString('pt-BR')}
-        </p>
-      </div>
+      <div className='flex flex-col sm:flex sm:flex-row w-full gap-10 min-h-96'>
+        <div className='flex flex-col justify-between items-baseline md:w-1/2'>
+          <h2
+            className='text-4xl font-bold text-[var(--primary)]'
+            dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+          />
+          <p
+            className='text-[var(--secondary)] text-xl text-justify mt-4'
+            dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
+          />
+          <div>
+            <p className='flex items-center gap-2 text-[var(--secondary)] font-medium mt-4'>
+              Por
+              <span className='text-[var(--primary)] font-bold -m-1'>
+                Bella
+              </span>
+            </p>
+            <p className='font-light text-[var(--secondary)] text-sm'>
+              {new Date(post.date).toLocaleDateString('pt-BR')}
+            </p>
+          </div>
+        </div>
 
-      {/* Banner */}
-      <div className='relative rounded-xl max-w-7xl pb-[56.25%] overflow-hidden'>
-        <Image
-          src={post.jetpack_featured_media_url || '/Banner.jpg'}
-          alt='Banner'
-          fill
-          className='absolute object-cover'
-        />
+        {/* Banner */}
+        <div className='relative rounded-xl min-h-60 md:w-1/2 overflow-hidden'>
+          <Image
+            src={post.jetpack_featured_media_url || '/Banner.jpg'}
+            alt='Banner'
+            fill
+            className='absolute object-cover'
+          />
+        </div>
       </div>
 
       {/* Conteúdo */}
@@ -108,21 +114,22 @@ export default function PostClient() {
             key={related.id}
             className='relative w-full h-56 rounded-xl overflow-hidden'
           >
-            <Image
-              src={related.jetpack_featured_media_url || '/fallback.jpg'}
-              alt={related.title.rendered}
-              fill
-              className='object-cover'
-            />
-            <div className='absolute flex justify-between backdrop-blur-md bg-black/40 rounded-xl inset-x-0 py-2 px-4 bottom-3 mx-3 border-gray-300/80 border-[0.5px]'>
-              <h2
-                className='font-bold truncate'
-                dangerouslySetInnerHTML={{ __html: related.title.rendered }}
+            <Link href={`/leitura-materia/${related.slug}`}>
+              <Image
+                src={related.jetpack_featured_media_url || '/Banner.jpg'}
+                alt={related.title.rendered}
+                fill
+                className='object-cover'
               />
-              <Link href={`/leitura-materia/${related.slug}`}>
+              <div className='absolute flex justify-between backdrop-blur-md bg-black/40 rounded-xl inset-x-0 py-2 px-4 bottom-3 mx-3 border-gray-300/80 border-[0.5px]'>
+                <h2
+                  className='font-bold truncate'
+                  dangerouslySetInnerHTML={{ __html: related.title.rendered }}
+                />
+
                 <Image src='/Arrow.svg' alt='' width={24} height={24} />
-              </Link>
-            </div>
+              </div>
+            </Link>
           </div>
         ))}
       </div>

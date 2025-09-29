@@ -2,13 +2,13 @@ import Image from 'next/image'
 
 export default function QuemSomosPage() {
   return (
-    <main className='mt-12 flex w-[1280px] gap-6 items-start justify-center'>
+    <main className='mt-12 flex flex-col lg:flex lg:flex-row max-w-7xl gap-6 items-start justify-center'>
       <Image
         src='/quem-somos.png'
         alt='Logo Fachada Lord'
         width={703}
         height={542}
-        className='w-full h-auto rounded-xl object-contain'
+        className='w-full h-auto rounded-xl object-contain md:object-cover md:max-h-80'
       />
 
       <div className='text-[var(--secondary)]'>
