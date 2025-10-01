@@ -48,14 +48,17 @@ export default function PostClient() {
       {/* Título e descrição */}
       <div className='flex flex-col sm:flex sm:flex-row w-full gap-10 min-h-96'>
         <div className='flex flex-col justify-between items-baseline md:w-1/2'>
-          <h2
-            className='text-4xl font-bold text-[var(--primary)]'
-            dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-          />
-          <p
-            className='text-[var(--secondary)] text-xl text-justify mt-4'
-            dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
-          />
+          <div>
+            <h2
+              className='text-4xl font-bold text-[var(--primary)]'
+              dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+            />
+            <div className='w-full h-px bg-gray-200 mt-4' />
+            <p
+              className='text-[var(--secondary)] text-xl text-justify mt-4'
+              dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
+            />
+          </div>
           <div>
             <p className='flex items-center gap-2 text-[var(--secondary)] font-medium mt-4'>
               Por
@@ -78,6 +81,11 @@ export default function PostClient() {
             className='absolute object-cover'
           />
         </div>
+      </div>
+
+      {/*Separator*/}
+      <div className='w-full h-px bg-gray-200 mt-4 relative'>
+        <div className='absolute w-1/4 h-1 bg-[var(--primary)] inset-0 mx-auto' />
       </div>
 
       {/* Conteúdo */}

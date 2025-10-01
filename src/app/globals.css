@@ -66,6 +66,7 @@ body {
 .prose p {
   margin-bottom: 1rem;
   line-height: 1.75;
+  font-size: 1.125rem;
 }
 
 .prose ul,
@@ -90,4 +91,9 @@ body {
 .prose img {
   border-radius: 0.5rem;
   margin: 1rem 0;
+}
+
+.prose strong {
+  font-weight: bold;
+  color: var(--primary);
 }
