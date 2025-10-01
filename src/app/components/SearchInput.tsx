@@ -13,6 +13,7 @@ export default function SearchInput() {
     if (searchTerm.trim()) {
       router.push(`/explore?search=${encodeURIComponent(searchTerm.trim())}`)
     }
+    setSearchTerm('') // Clear the search input after submission
   }
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
