@@ -9,7 +9,7 @@ interface ProductCardProps {
 export function ProductCard({ image, title, link }: ProductCardProps) {
   return (
     <div className='max-w-[223px] min-h-[355px]'>
-      <div className='relative max-w-[223px] min-h-[250px] bg-white rounded-xl outline-[1px] outline-[var(--primary)] flex items-center justify-center'>
+      <div className='relative max-w-[223px] min-h-[250px] bg-white rounded-xl border-[1px] border-[var(--primary)] flex items-center justify-center'>
         <img src={image} alt={title} className='object-fill' />
       </div>
       <div className='flex items-center justify-between mt-2 px-2.5'>
