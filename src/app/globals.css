@@ -29,3 +29,65 @@ body {
   color: var(--foreground);
   font-family: var(--font-main);
 }
+
+/* Custom styles for blog post content */
+.prose h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose h3 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+.prose ul,
+.prose ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose li {
+  margin-bottom: 0.25rem;
+}
+
+.prose a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  color: var(--primary-hover);
+}
+
+.prose img {
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
