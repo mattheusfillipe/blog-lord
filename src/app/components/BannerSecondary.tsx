@@ -24,38 +24,6 @@ export function BannerSecondary({
             )}
 
             {/* Overlay com informações do post */}
-            <div className='absolute flex justify-between items-center bg-black/40 rounded-lg top-3 mx-3 px-4 py-2 border-gray-300/80 border-[0.5px] backdrop-blur-md'>
-              <div className='flex gap-3 items-center'>
-                <div className='flex items-center gap-2'>
-                  {post && (
-                    <Image
-                      src='/authorDefault.png'
-                      alt='Foto autor do post'
-                      width={20}
-                      height={20}
-                      className='object-cover rounded-full overflow-hidden'
-                    />
-                  )}
-                  <p className='font-medium'>Bella</p>
-                </div>
-
-                <div className='flex gap-1 items-center'>
-                  <Image
-                    src='/Calendar.svg'
-                    alt='Calendário ícone'
-                    width={16}
-                    height={16}
-                  />
-                  <p className='text-sm font-medium text-[var-(--primary)]'>
-                    {new Date(post.date).toLocaleDateString('pt-BR', {
-                      day: '2-digit',
-                      month: 'short',
-                      year: 'numeric',
-                    })}
-                  </p>
-                </div>
-              </div>
-            </div>
 
             {/* Overlay com categorias */}
             {post?.categories.length > 0 && (
