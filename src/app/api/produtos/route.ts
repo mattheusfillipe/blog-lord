@@ -3,7 +3,7 @@ import * as cheerio from 'cheerio'
 
 export async function GET() {
   const res = await fetch(
-    'https://lordperfumaria.com.br/produtos/?sort_by=created-descending',
+    'https://lordperfumaria.com.br/',
     {
       headers: {
         'User-Agent':
@@ -15,7 +15,7 @@ export async function GET() {
   const $ = cheerio.load(html)
   const produtos: any[] = []
 
-  $('.js-item-product').each((_, element) => {
+  $('.section-featured-home .js-item-product').each((_, element) => {
     const title = $(element).find('.js-item-name').text().trim()
     const link = $(element).find('a').attr('href')
     const rawImage = $(element).find('.js-item-image').attr('data-srcset')
