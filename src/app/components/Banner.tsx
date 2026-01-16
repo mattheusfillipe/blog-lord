@@ -7,12 +7,16 @@ import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css/pagination'
 import 'swiper/css'
 import { BannerPrimary } from './BannerPrimary'
-import { useBlogPosts } from '@/hooks/useBlogPosts'
 import { BannerSecondary } from './BannerSecondary'
 import { BannerTertiary } from './BannerTertiary'
+import { Post } from '@/app/interfaces/Post'
+import { categoryMap } from '@/hooks/useBlogPosts'
 
-export function Banner() {
-  const { posts, categoryMap } = useBlogPosts()
+interface BannerProps {
+  posts: Post[]
+}
+
+export function Banner({ posts }: BannerProps) {
 
   return (
     <section className='mt-8 w-full max-w-7xl flex'>

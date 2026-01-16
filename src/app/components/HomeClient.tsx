@@ -4,22 +4,22 @@ import { Banner } from '@/app/components/Banner'
 import { Instagram } from '@/app/components/Instagram'
 import { Lancamentos } from '@/app/components/Lancamentos'
 import { Newsletter } from '@/app/components/Newsletter'
-import { useBlogPosts } from '@/hooks/useBlogPosts'
+import { Post } from '@/app/interfaces/Post'
+import Link from 'next/link'
+import { PostCard } from './PostCard'
 
-export function Home() {
-  const { loading, error } = useBlogPosts()
+interface HomeProps {
+  posts: Post[]
+}
 
-  if (loading)
-    return <div className='bg-gray-300 w-screen h-screen animate-pulse' />
-  if (error) return <div>Error: {error.message}</div>
-
+export function Home({ posts }: HomeProps) {
   return (
     <>
-      <Banner />
+      <Banner posts={posts} />
+
       <Instagram />
       <Lancamentos />
       <Newsletter />
-      {/* Outras seções */}
     </>
   )
 }

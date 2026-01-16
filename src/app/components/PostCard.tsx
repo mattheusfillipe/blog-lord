@@ -19,7 +19,7 @@ export function PostCard({
   link,
 }: PostCardProps) {
   return (
-    <div className='h-auto'>
+    <div className='flex flex-col h-full'>
       <div className='relative w-full pb-[56.25%] rounded-xl overflow-hidden hover:transform hover:scale-105 transition-transform duration-300 ease-in-out'>
         {/* Banner do post */}
         <Link href={link}>
@@ -64,30 +64,32 @@ export function PostCard({
         </div>
 
         {/* Botão de leitura */}
-        <Link href={link}>
-          <button className='absolute cursor-pointer backdrop-blur-md bg-black/40 rounded-xl py-2 px-4 top-3 md:bottom-3 right-3 max-h-10 border-gray-300/80 border-[0.5px]'>
+        <Link href={link} className='absolute top-3 md:bottom-3 right-3 z-10'>
+          <span className='flex items-center justify-center cursor-pointer backdrop-blur-md bg-black/40 rounded-xl py-2 px-4 max-h-10 border-gray-300/80 border-[0.5px] hover:bg-black/60 transition-colors'>
             <Image
               src='/Arrow.svg'
               alt='Ícone de seta'
               width={20}
               height={20}
             />
-          </button>
+          </span>
         </Link>
       </div>
 
       {/* Título e descrição */}
-      <Link href={link}>
-        <h2
-          className='text-[var(--secondary)] mt-4 font-bold text-2xl hover:underline transition-all duration-300 ease-in-out'
-          dangerouslySetInnerHTML={{ __html: title }}
-        />
-      </Link>
+      <div className='flex flex-col flex-grow'>
+        <Link href={link}>
+          <h2
+            className='text-[var(--secondary)] mt-4 font-bold text-2xl hover:underline transition-all duration-300 ease-in-out line-clamp-2'
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
+        </Link>
 
-      <p
-        className='line-clamp-4 text-[var(--secondary)] text-justify mt-1'
-        dangerouslySetInnerHTML={{ __html: description }}
-      />
+        <div
+          className='line-clamp-4 text-[var(--secondary)] text-justify mt-1 flex-grow'
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
+      </div>
     </div>
   )
 }

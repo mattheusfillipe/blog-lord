@@ -3,6 +3,7 @@ import { Source_Sans_3 } from 'next/font/google'
 import './globals.css'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
+import Analytics from './analytics'
 
 const sourceSans = Source_Sans_3({
   variable: '--font-main',
@@ -22,7 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='pt-BR' className={sourceSans.variable}>
-      <body className='antialiased flex flex-col items-center px-4 mt-10 w-full overflow-x-hidden'>
+      <body
+        suppressHydrationWarning
+        className='antialiased flex flex-col items-center px-4 mt-10 w-full overflow-x-hidden'
+      >
+        <Analytics />
         <div className='w-full max-w-7xl'>
           <Header />
           {children}
