@@ -1,3 +1,4 @@
+import React from 'react'
 import InstagramFeed from './InstagramFeed'
 
 export function Instagram() {
@@ -56,7 +57,8 @@ export function Instagram() {
           </svg>
         </a>
       </div>
-      <div className='p-4 -mt-58'>
+
+      <div className='px-4 -mt-44 pb-12'>
         <InstagramFeed />
       </div>
     </section>

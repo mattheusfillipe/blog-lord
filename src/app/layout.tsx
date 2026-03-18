@@ -3,6 +3,7 @@ import { Source_Sans_3 } from 'next/font/google'
 import './globals.css'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
+import { NotificationBar } from './components/NotificationBar'
 import Analytics from './analytics'
 
 const sourceSans = Source_Sans_3({
@@ -27,6 +28,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className='antialiased flex flex-col items-center px-4 mt-10 w-full overflow-x-hidden'
       >
+        <NotificationBar />
         <Analytics />
         <div className='w-full max-w-7xl'>
           <Header />
