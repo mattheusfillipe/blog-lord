@@ -8,6 +8,14 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'lordperfumariablog.wordpress.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'i0.wp.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'lordperfumariablog.wpcomstaging.com',
+      },
     ],
   },
 }
